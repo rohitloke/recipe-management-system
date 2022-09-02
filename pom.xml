@@ -1,0 +1,55 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.rms.assignment</groupId>
+	<artifactId>recipe-management-system</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>Recipe management system</name>
+	<description>A recipe management system that allows to create recipes and search for new recipes.</description>
+	<properties>
+		<dbsetup.version>2.1.0</dbsetup.version>
+		<mapstruct.version>1.5.2.Final</mapstruct.version>
+		<hibernate.search.version>5.11.10.Final</hibernate.search.version>
+		<java.version>11</java.version>
+	</properties>
+	<dependencyManagement>
+		<dependencies>
+			<!-- hibernate-search dependency for fullt ext search -->
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-search-orm</artifactId>
+				<version>${hibernate.search.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-search-elasticsearch</artifactId>
+				<version>${hibernate.search.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mapstruct</groupId>
+				<artifactId>mapstruct</artifactId>
+				<version>${mapstruct.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<!-- populate the database with test data. -->
+			<dependency>
+				<groupId>com.ninja-squad</groupId>
+				<artifactId>DbSetup</artifactId>
+				<version>${dbsetup.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>2.7.3</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	<modules>
+	  <module>rms-core</module>
+	  <module>rms-api</module>
+	</modules>
+</project>
