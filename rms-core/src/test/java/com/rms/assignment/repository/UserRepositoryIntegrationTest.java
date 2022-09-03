@@ -27,7 +27,7 @@ public class UserRepositoryIntegrationTest extends AbstractIntegrationTest {
         Optional<User> result = userRepository.getByUsername(username);
         assertTrue(result.isPresent());
         User user = result.get();
-        assertEquals(username + 1, user.getUsername());
+        assertEquals(username, user.getUsername());
         List<Recipe> favouriteRecipes = user.getFavouriteRecipes();
         assertEquals(1, favouriteRecipes.size());
         assertEquals("Oreo Ice Cream Dessert", favouriteRecipes.get(0).getName());
