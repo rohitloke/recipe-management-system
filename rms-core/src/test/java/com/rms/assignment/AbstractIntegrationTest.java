@@ -26,6 +26,8 @@ import com.rms.assignment.spring.config.CoreTestConfiguration;
 
 @ContextConfiguration(classes = { CoreTestConfiguration.class })
 public abstract class AbstractIntegrationTest {
+    public static final String OTHER_RECIPE_NAME = "other recipe";
+    public static final String OREO_RECIPE_NAME = "Oreo Ice Cream Dessert";
     protected static DbSetupTracker dbSetupTracker = new DbSetupTracker();
     private static final Operation DELETE_ALL = deleteAllFrom(User.TABLE_NAME_FAV_RECIPES, User.TABLE_NAME_USER,
             Recipe.TABLE_NAME_RECIPE);
@@ -35,7 +37,7 @@ public abstract class AbstractIntegrationTest {
             insertInto(User.TABLE_NAME_USER).columns("id", "username", "version").values(1001L, "souschef", 1).build(),
             insertInto(Recipe.TABLE_NAME_RECIPE)
                     .columns("id", "name", "description", "veg", "serves", "instructions", "ingredients", "version")
-                    .values(1000L, "Oreo Ice Cream Dessert", "Oreo dessert", 1, 10,
+                    .values(1000L, OREO_RECIPE_NAME, "Oreo dessert", 1, 10,
                             "    Soften ice cream until you can mix it with other ingredients \r\n"
                                     + "    Crumble Oreo cookies\r\n"
                                     + "    Mix Oreo cookies and cool whip into ice cream\r\n" + "    Blend well\r\n"
@@ -43,6 +45,8 @@ public abstract class AbstractIntegrationTest {
                             "    ½ gallon vanilla ice cream\r\n" + "    1 pack Oreo cookies\r\n"
                                     + "    8 oz. Cool whip\r\n" + "",
                             10)
+                    .values(1001L, OTHER_RECIPE_NAME, "main course", 0, 5, "Other recipe preparation",
+                            "    ingredient 1   cookies 2", 10)
                     .build(),
             insertInto(User.TABLE_NAME_FAV_RECIPES).columns("user_id", "recipe_id").values(1001L, 1000L).build());
 

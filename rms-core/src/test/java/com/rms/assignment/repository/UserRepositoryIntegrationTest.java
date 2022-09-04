@@ -17,7 +17,7 @@ import com.rms.assignment.core.entity.User;
 import com.rms.assignment.core.repository.UserRepository;
 
 @ExtendWith(SpringExtension.class)
-public class UserRepositoryIntegrationTest extends AbstractIntegrationTest {
+class UserRepositoryIntegrationTest extends AbstractIntegrationTest {
     @Autowired
     private UserRepository userRepository;
 
