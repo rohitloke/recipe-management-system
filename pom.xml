@@ -11,6 +11,7 @@
 		<mapstruct.version>1.5.2.Final</mapstruct.version>
 		<hibernate.search.version>5.11.10.Final</hibernate.search.version>
 		<java.version>11</java.version>
+		<springdoc.openapi.ui.version>1.6.11</springdoc.openapi.ui.version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -25,6 +26,11 @@
 				<artifactId>mapstruct</artifactId>
 				<version>${mapstruct.version}</version>
 				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.springdoc</groupId>
+				<artifactId>springdoc-openapi-ui</artifactId>
+				<version>${springdoc.openapi.ui.version}</version>
 			</dependency>
 
 			<!-- populate the database with test data. -->
