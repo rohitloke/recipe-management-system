@@ -1,18 +1,10 @@
-package com.rms.assignment.core.repository;
+package com.rms.assignment.core.service;
 
 import java.util.Optional;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-
 import com.rms.assignment.core.entity.User;
 
-/**
- * JPA repository to manage {@link User} entity in the database.
- * 
- * @author Rohit
- */
-public interface UserRepository extends JpaRepository<User, Long> {
-
+public interface UserService {
     /**
      * reads the {@link User} based on it's username property.
      * 
@@ -20,4 +12,13 @@ public interface UserRepository extends JpaRepository<User, Long> {
      * @return {@link Optional} containing the user if found, else empty.
      */
     Optional<User> getByUsername(String username);
+
+    /**
+     * handles creation of the user
+     * 
+     * @param user {@link User} to be created
+     * @return create {@link User}
+     */
+    User create(User user);
+
 }

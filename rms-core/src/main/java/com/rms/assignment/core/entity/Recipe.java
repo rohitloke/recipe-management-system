@@ -82,4 +82,12 @@ public class Recipe extends BaseEntity {
         this.ingredients = ingredients;
     }
 
+    public int getServes() {
+        return serves;
+    }
+
+    public void setServes(int serves) {
+        this.serves = serves;
+    }
+
 }
