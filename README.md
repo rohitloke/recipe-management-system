@@ -26,8 +26,8 @@ The application misses spring security, though recipe API can be public the User
 
 To run the project:
 <ol>
-  <li>Clone the project using `git clone https://github.com/rohitloke/recipe-management-system.git` command</li>
-  <li>Navigate to project directory and run `mvn clan install`. This will run tests and build reqiuisite jars</li>
+  <li>Clone the project using <code>git clone https://github.com/rohitloke/recipe-management-system.git</code> command</li>
+  <li>Navigate to project directory and run `mvn clean install`. This will run tests and build reqiuisite jars</li>
   <li>From the project directory run `java -jar rms-api\target\rms-api-0.0.1-SNAPSHOT.jar` that should start our spring boot application</li>
 </ol>
 
