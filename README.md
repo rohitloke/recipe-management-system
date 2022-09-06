@@ -27,13 +27,13 @@ The application misses spring security, though recipe API can be public the User
 To run the project:
 <ol>
   <li>Clone the project using <code>git clone https://github.com/rohitloke/recipe-management-system.git</code> command</li>
-  <li>Navigate to project directory and run `mvn clean install`. This will run tests and build reqiuisite jars</li>
+  <li>Navigate to project directory and run `mvn clean install`. This will run tests and build requisite jars</li>
   <li>From the project directory run `java -jar rms-api\target\rms-api-0.0.1-SNAPSHOT.jar` that should start our spring boot application</li>
 </ol>
 
 The REST documentation is available on `http://localhost:8080/rms/rms-api-docs.html`. The swagger ui also allows us to make http request for the available REST endpoints.
 
-We add Recipes first and user.For eg:
+We add Recipes first .For eg:
 <pre><code>curl -X POST -H 'Content-Type: application/json' -i http://localhost:8080/rms/recipe --data '{"name": "new recipe", "description":"new description", "veg":"true", "serves":"3", "instructions":"do something", "ingredients":"add something"}'</code> </pre>
 
 and then add user with just created recipe names in the favouriterecipes collection:
