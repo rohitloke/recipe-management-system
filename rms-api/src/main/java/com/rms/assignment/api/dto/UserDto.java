@@ -1,6 +1,7 @@
 package com.rms.assignment.api.dto;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -23,7 +24,7 @@ public class UserDto {
     }
 
     public List<RecipeDto> getFavouriteRecipes() {
-        return favouriteRecipes;
+        return Collections.unmodifiableList(favouriteRecipes);
     }
 
 }
